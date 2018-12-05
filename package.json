@@ -1,5 +1,6 @@
 {
   "name": "react-native-pure-form",
+  "version": "0.1.1",
   "description": "Wrapper to validate forms in react-native",
   "main": "src/index.js",
   "scripts": {
