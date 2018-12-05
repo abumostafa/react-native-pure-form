@@ -1,0 +1,39 @@
+{
+  "name": "react-native-pure-form",
+  "version": "0.1.0",
+  "description": "Wrapper to validate forms in react-native",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abumostafa/react-native-pure-form.git"
+  },
+  "keywords": [
+    "react-native",
+    "form",
+    "validation"
+  ],
+  "author": "Ahmed Abumostafa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abumostafa/react-native-pure-form/issues"
+  },
+  "homepage": "https://github.com/abumostafa/react-native-pure-form#readme",
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.0.0",
+    "react-native": "^0.49"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "react-test-renderer": "^16.6.3"
+  },
+  "jest": {
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    }
+  }
+}
