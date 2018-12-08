@@ -1,10 +1,11 @@
 import React from 'react'
-import {View} from 'react-native'
+import { View } from 'react-native'
+import FormField from './FormField'
 
 class Form extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { errors: {}, valid: false }
+    this.state = {errors: {}, valid: false}
     this.values = []
   }
 
@@ -14,11 +15,11 @@ class Form extends React.Component {
 
   _createElements(elements) {
     return React.Children.map(elements, child => {
-      if (child.type !== FormControl) {
+      if (child.type !== FormField) {
         return child
       }
 
-      const { value, name } = child.props
+      const {value, name} = child.props
       if (value) {
         this.values[name] = value
       }
@@ -32,19 +33,20 @@ class Form extends React.Component {
   }
 
   submit() {
-    const { validate } = this.props
+    const {validate} = this.props
     if (validate) {
       const errors = validate(this.values)
       if (Object.keys(errors).length) {
-        this.setState({ valid: false, errors })
-      } else {
-        this.setState({ valid: true, errors: {} })
+        this.setState({valid: false, errors})
+      }
+      else {
+        this.setState({valid: true, errors: {}})
       }
     }
   }
 
   render() {
-    const { children, ...props } = this.props
+    const {children, ...props} = this.props
     return <View {...props}>{this._createElements(children)}</View>
   }
 }
