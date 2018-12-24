@@ -1,7 +1,11 @@
 import Form from './Form'
-import FormControl from './FormControl'
+import FormField from './FormField'
+import FormGroupField from './FormGroupField'
+import FormSubmit from './FormSubmit'
 
 export {
   Form,
-  FormControl,
+  FormField,
+  FormGroupField,
+  FormSubmit,
 }

@@ -3,21 +3,18 @@ import PropTypes from 'prop-types'
 
 class FormField extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { value: props.value || null, dirty: false, valid: false };
+    super(props)
+    this.state = {value: props.value || null, dirty: false, valid: false}
   }
 
   _onChange(value) {
-    const { validateOnChange, onChange } = this.props;
-    onChange && onChange(this.props.name, value);
-    this.setState({ dirty: true, value });
-    if (validateOnChange) {
-      this.setState({ valid: true });
-    }
+    const {onChange} = this.props
+    onChange && onChange(this.props.name, value)
+    this.setState({dirty: true, value})
   }
 
   render() {
-    const { component: WrappedComponent, ...props } = this.props;
+    const {component: WrappedComponent, ...props} = this.props
     return (
       <WrappedComponent
         {...props}
@@ -27,7 +24,7 @@ class FormField extends React.Component {
         error={this.props.error}
         value={this.state.value}
       />
-    );
+    )
   }
 }
 
@@ -37,6 +34,6 @@ FormField.propTypes = {
     PropTypes.func,
   ]).isRequired,
   name: PropTypes.string.isRequired
-};
+}
 
 export default FormField

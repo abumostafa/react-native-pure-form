@@ -6,6 +6,7 @@ exports[`renders correctly 1`] = `
   dirty={false}
   name="test-input"
   onChange={[Function]}
+  underlineColorAndroid="transparent"
   value={null}
 />
 `;
